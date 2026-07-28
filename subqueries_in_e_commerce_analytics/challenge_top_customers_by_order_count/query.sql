@@ -1,0 +1,1 @@
+SELECT o.customer_id,(SELECT name FROM customers c WHERE c.customer_id = o.customer_id) AS name,COUNT(*) AS order_count FROM orders o GROUP BY o.customer_id ORDER BY order_count DESC,o.customer_id ASC LIMIT 3;
